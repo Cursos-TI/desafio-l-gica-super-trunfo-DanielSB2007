@@ -8,7 +8,7 @@ int main() {
 //Variáveis para o cadastro das cartas
 
 int escolhaJogador;
-int resultado;
+int resultado, resultado2;
 
     //Informações da carta 1
 
@@ -91,8 +91,17 @@ PIBpercapita2 = PIB2 / populacao2;
 SuperPoder2 = populacao2 + area2 + PIB2 + turismo2 + 1/densidade2 + PIBpercapita2;
 ;
 
+//escolha de comparação
 
-printf("Escolha qual atributo das cartas será comparado: \n");
+printf("Quantos atributos deseja comparar? \n");
+printf("1. Comparar apenas um atributo \n");
+printf("2. Comparar dois os atributos \n");
+scanf("%d", &escolhaJogador);
+
+
+switch (escolhaJogador) {
+case 1:
+    printf("Escolha qual atributo das cartas será comparado: \n");
 printf("1. População \n");
 printf("2. Área \n");
 printf("3. PIB \n");
@@ -100,8 +109,8 @@ printf("4. Turismo \n");
 printf("5. Densidade Populacional \n");
 printf("6. PIB per capita \n");
 scanf("%d", &resultado);
-switch (resultado)
-{
+
+switch (resultado) {
 case 1:
 printf("***Comparação entre as cartas***\n");
 printf("Nome da Carta1: %s \n", nome1);
@@ -196,8 +205,36 @@ default:
 printf("Opção inválida. Por favor, escolha um número entre 1 e 6.\n");
     break;
 }
-  
-return 0;
-    
-};
 
+return 0;
+
+case 2:
+    printf("Escolha quais atributos das cartas será comparado: \n");
+    printf("Escolher o mesmo atributo para comparação não é permitido! \n");
+printf("1. População \n");
+printf("2. Área \n");
+printf("3. PIB \n");
+printf("4. Turismo \n");
+printf("5. Densidade Populacional \n");
+printf("6. PIB per capita \n");
+scanf("%d", &resultado);
+scanf("%d", &resultado2);
+ 
+if (resultado == resultado2) {
+    printf("A escolha do mesmo atributo para comparação não é permitida! Por favor, escolha atributos diferentes.\n");   
+};
+//duvida sobre como prosseguir
+
+
+
+
+
+
+
+
+
+
+}
+
+    return 0;
+}
